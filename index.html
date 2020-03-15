@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Diferencia en salario real a la fecha</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="main.js"></script>
+  </head>
+  <body onload="setup_handlers()">
+    <h2 class="text-center mt-2">
+      Calcular tu diferencia de salario real desde el inicio del actual gobierno
+    </h1>
+    <table class="table table-bordered mr-auto ml-auto w-50">
+      <tr>
+	<th>Tu salario (en pesos)</th>
+	<td><input type="number" id="salario"></td>
+      </tr>
+      <tr>
+	<th>El valor en dólares de tu salario al 29 de febrero de 2020</th>
+	<td><span id="prev_usd">?</span> U$S</td>
+      </tr>
+      <tr>
+	<th>El valor en dólares de tu salario hoy</th>
+	<td><span id="cur_usd">?</span> U$S</td>
+      </tr>
+      <tr>
+	<th colspan=2 class="text-center">
+	  En total, a la fecha has <span id="difference">?</span> U$S en salario real.
+	</th>
+      </tr>
+    </table>
+    <div class="mr-auto ml-auto mb-5 w-75 d-none" id="explanation">
+      <h2 class="text-center">Explicación</h2>
+      <ul class="list-group">
+	<li class="list-group-item">
+	  Al 29/02/2020, la tasa cambiaria era de
+	  <span id="pesos-old"></span> pesos uruguayos por un dólar a la
+	  venta (o sea, el precio de comprar un dólar teniendo pesos)
+	</li>
+	<li class="list-group-item">
+	  Hoy, la tasa cambiaria es de
+	  <span id="pesos-new"></span> pesos uruguayos por un dólar a la
+	  venta
+	</li>
+	<li class="list-group-item">
+	  Si tu contrato laboral no ha cambiado
+	  desde entonces tu salario en pesos sigue igual, sin embargo
+	  el costo de distribución, producción y/o importación de los
+	  productos que consumes han aumentado ya que las transacciones
+	  internacionales (materiales, combustible, etc) se realizan en
+	  dólares.</li>
+	<li class="list-group-item">
+	  Esto significa que junto
+	  con el dólar aumenta el precio en pesos uruguayos de las compras,
+	  mientras que tu salario se ha mantenido igual. En términos estimados,
+	  esto significa que tu poder de compra en dólares ha cambiado por
+	  <span id="diff-dolares"></span> dólares.
+	</li>
+	<li class="list-group-item">
+	  Si bien la
+	  <a href="https://es.wikipedia.org/wiki/Colapso_del_mercado_de_valores_de_2020">caída del mercado de valores</a>,
+	  la <a href="https://en.wikipedia.org/wiki/2020_Russia%E2%80%93Saudi_Arabia_oil_price_war">guerra económica del petróleo entre Rusia y Arabia Saudita</a>,
+	  así como la ralentización general de la economía por la
+	  expansión del <a href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic">COVID-19</a>
+	  han sido factores inevitables en la suba del dólar, la
+	  <a href="https://ladiaria.com.uy/articulo/2020/3/arbeleche-sobre-el-dolar-la-incertidumbre-es-muy-elevada-pero-hay-que-observar-la-situacion-con-tranquilidad/">actitud</a>
+	  general del <a href="https://ladiaria.com.uy/articulo/2020/3/uriarte-sobre-el-aumento-del-dolar-era-lo-que-ansiabamos/">gobierno</a> en sus <a href="https://ladiaria.com.uy/articulo/2019/12/uriarte-estimo-que-el-dolar-deberia-rondar-los-40-pesos-va-a-permitir-mas-exportaciones-y-mas-empleo/">primeros días</a> así como la demora por parte del BCU para <a href="https://negocios.elpais.com.uy/noticias/dolar-llego-venta-publico-paso-mercados-petroleo.html">intervenir en el mercado cambiario
+	  </a> han incentivado el brusco salto del dólar.
+	</li>
+      </ul>
+      <h2 class="text-center">Soluciones</h2>
+      <ol class="pb-5">
+	<li>
+	  <s>dejar de votar neoliberales</s>
+	</li>
+	<li>
+	  Exigir mayor intervención del estado en la economía
+	</li>
+	<li>
+	  Limitar la compra y venta de dólares para evitar fluctuación causada por pánico interno
+	</li>
+	<li>
+	  <s>dejar de mamarsela a la ARU</s>
+	</li>
+	<li>
+	  <s>desalambrar</s>
+	</li>
+      </ol>
+    </div>
+    <footer class="fixed-bottom" style="background-color: #a3a3a3;">
+      <div class="container">
+	<div class="float-left">
+	  Copyleft (C) 2020 kouta-kun<br/>
+	  AGPLv3
+	</div>
+	<div class="float-right text-muted">
+	  Nosotros les avisamos.
+	</div>
+      </div>
+    </footer>
+  </body>
+</html>
