@@ -14,7 +14,7 @@ async function usd_at_gov_change() {
     return values.rates.USD.sell;
 }
 
-var cache = {};
+var cache = {}; //
 
 
 async function get_cache() {
