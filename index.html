@@ -7,61 +7,66 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="main.js"></script>
   </head>
-  <body onload="setup_handlers()">
+  <body onload="setup_handlers()" class="bg-dark text-white">
     <h2 class="text-center mt-2">
       Calcular tu diferencia de salario real desde el inicio del actual gobierno
     </h2>
     <i class="text-center">Todos los cálculos se realizan localmente, únicamente realizamos peticiones para acceder al valor cambiario</i>
-    <table class="table table-bordered mr-auto ml-auto w-50">
+    <div class="container-fluid">
+    <table class="table table-bordered table-dark mr-auto ml-auto w-90">
       <tr>
-	<th colspan=2><label for="salario">Tu salario (en pesos)</label></th>
-	<td colspan=2><input type="number" id="salario"></td>
+	<th><label for="salario">Tu salario (en pesos)</label></th>
+	<td><input type="number" id="salario" class="form-control"></td>
       </tr>
       <tr>
-	<th><label for="start-date">Fecha inicio</label></th>
-	<td><input type="date" id="start-date" value="2020-02-29"></td>
+	<th colspan=2><label for="start-date">Fecha de inicio</label></th>
+      </tr>
+      <tr>
+	<td colspan=2><input type="date" id="start-date" value="2020-02-29" class="form-control"></td>
+      </tr>
+      <tr>
 	<th><label for="prev_usd">El valor en dólares de tu salario antes</label></th>
 	<td><span id="prev_usd">?</span> U$S</td>
       </tr>
       <tr>
-	<td colspan=2></td>
 	<th><label for="cur_usd">El valor en dólares de tu salario después</label></th>
 	<td><span id="cur_usd">?</span> U$S</td>
       </tr>
       <tr>
-	<th colspan=4 class="text-center">
+	<th colspan=2 class="text-center">
 	  En total, a la fecha has <span id="difference">?</span> U$S en salario real.
 	</th>
       </tr>
     </table>
+    </div>
     <div class="mr-auto ml-auto mb-5 w-75 d-none" id="explanation">
       <h2 class="text-center">Explicación</h2>
       <ul class="list-group">
-	<li class="list-group-item">
+	<li class="list-group-item list-group-item-dark">
 	  Al <span id="start-date-span"></span>, la tasa cambiaria era de
 	  <span id="pesos-old"></span> pesos uruguayos por un dólar a la
 	  venta (o sea, el precio de comprar un dólar teniendo pesos)
 	</li>
-	<li class="list-group-item">
+	<li class="list-group-item list-group-item-dark">
 	  Hoy, la tasa cambiaria es de
 	  <span id="pesos-new"></span> pesos uruguayos por un dólar a la
 	  venta
 	</li>
-	<li class="list-group-item">
+	<li class="list-group-item list-group-item-dark">
 	  Si tu contrato laboral no ha cambiado
 	  desde entonces tu salario en pesos sigue igual, sin embargo
 	  el costo de distribución, producción y/o importación de los
 	  productos que consumes han aumentado ya que las transacciones
 	  internacionales (materiales, combustible, etc) se realizan en
 	  dólares.</li>
-	<li class="list-group-item">
+	<li class="list-group-item list-group-item-dark">
 	  Esto significa que junto
 	  con el dólar aumenta el precio en pesos uruguayos de las compras,
 	  mientras que tu salario se ha mantenido igual. En términos estimados,
 	  esto significa que tu poder de compra en dólares ha cambiado por
 	  <span id="diff-dolares"></span> dólares.
 	</li>
-	<li class="list-group-item">
+	<li class="list-group-item list-group-item-dark">
 	  Si bien la
 	  <a href="https://es.wikipedia.org/wiki/Colapso_del_mercado_de_valores_de_2020">caída del mercado de valores</a>,
 	  la <a href="https://en.wikipedia.org/wiki/2020_Russia%E2%80%93Saudi_Arabia_oil_price_war">guerra económica del petróleo entre Rusia y Arabia Saudita</a>,
@@ -92,17 +97,15 @@
 	</li>
       </ol>
     </div>
-    <footer class="fixed-bottom" style="background-color: #a3a3a3;">
-      <div class="container">
-	<div class="float-left">
+    <footer style="width: 100%; border-top: 1px solid #a8a8a8;">
+	<div class="float-left ml-5">
 	  Copyleft (C) 2020 kouta-kun<br/>
 	  AGPLv3
 	</div>
-	<div class="float-right text-muted">
+	<div class="float-right mr-5">
 	  Nosotros les avisamos.<br/>
 	  <a href="https://github.com/kouta-kun/salario-perdido">Repositorio</a>
 	</div>
-      </div>
     </footer>
   </body>
 </html>
