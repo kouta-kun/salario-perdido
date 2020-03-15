@@ -54,4 +54,5 @@ function calculate_salary()
 
 function setup_handlers() {
     document.getElementById('salario').addEventListener('change', calculate_salary);
+    document.getElementById('start-date').addEventListener('change', calculate_salary);
 }
