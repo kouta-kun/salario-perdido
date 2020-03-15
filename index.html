@@ -13,19 +13,22 @@
     </h1>
     <table class="table table-bordered mr-auto ml-auto w-50">
       <tr>
-	<th>Tu salario (en pesos)</th>
-	<td><input type="number" id="salario"></td>
+	<th colspan=2><label for="salario">Tu salario (en pesos)</label></th>
+	<td colspan=2><input type="number" id="salario"></td>
       </tr>
       <tr>
-	<th>El valor en dólares de tu salario al 29 de febrero de 2020</th>
+	<th><label for="start-date">Fecha inicio</label></th>
+	<td><input type="date" id="start-date" value="2020-02-29"></td>
+	<th><label for="prev_usd">El valor en dólares de tu salario antes</label></th>
 	<td><span id="prev_usd">?</span> U$S</td>
       </tr>
       <tr>
-	<th>El valor en dólares de tu salario hoy</th>
+	<td colspan=2></td>
+	<th><label for="cur_usd">El valor en dólares de tu salario después</label></th>
 	<td><span id="cur_usd">?</span> U$S</td>
       </tr>
       <tr>
-	<th colspan=2 class="text-center">
+	<th colspan=4 class="text-center">
 	  En total, a la fecha has <span id="difference">?</span> U$S en salario real.
 	</th>
       </tr>
@@ -34,7 +37,7 @@
       <h2 class="text-center">Explicación</h2>
       <ul class="list-group">
 	<li class="list-group-item">
-	  Al 29/02/2020, la tasa cambiaria era de
+	  Al <span id="start-date-span"></span>, la tasa cambiaria era de
 	  <span id="pesos-old"></span> pesos uruguayos por un dólar a la
 	  venta (o sea, el precio de comprar un dólar teniendo pesos)
 	</li>
